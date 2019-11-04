@@ -1,0 +1,9 @@
+build:
+  maxIssues: 1
+
+formatting:
+  active: true
+  android: true
+  autoCorrect: false
+  SpacingAroundColon:
+    active: true
