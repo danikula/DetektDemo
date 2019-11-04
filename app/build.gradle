@@ -19,6 +19,12 @@ detekt {
     config = files("detekt.yml")
 }
 
+task detektFix(type: io.gitlab.arturbosch.detekt.Detekt) {
+    input = detekt.input
+    config = detekt.config
+    autoCorrect = true
+}
+
 android {
     compileSdkVersion 29
     defaultConfig {

@@ -4,6 +4,7 @@ build:
 formatting:
   active: true
   android: true
-  autoCorrect: false
+  autoCorrect: true
   SpacingAroundColon:
     active: true
+    autoCorrect: true
