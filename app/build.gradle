@@ -8,22 +8,13 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.1.1")
 }
 
+apply from: file('detekt.gradle')
+
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
-
-detekt {
-    input = files("src/main/java")
-    config = files("detekt.yml")
-}
-
-task detektFix(type: io.gitlab.arturbosch.detekt.Detekt) {
-    input = detekt.input
-    config = detekt.config
-    autoCorrect = true
-}
 
 android {
     compileSdkVersion 29
@@ -52,5 +43,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.1.1"
 }

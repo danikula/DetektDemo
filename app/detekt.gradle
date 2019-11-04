@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.1.1"
+    }
+}
+
+detekt {
+    input = files("src/main/java")
+    config = files("detekt.yml")
+}
+
+task detektFix(type: io.gitlab.arturbosch.detekt.Detekt) {
+    input = detekt.input
+    config = detekt.config
+    autoCorrect = true
+}
+
+dependencies {
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.1.1"
+}
