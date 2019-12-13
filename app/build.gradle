@@ -4,10 +4,6 @@ buildscript {
     }
 }
 
-plugins {
-    id("io.gitlab.arturbosch.detekt").version("1.1.1")
-}
-
 apply from: file('detekt.gradle')
 
 apply plugin: 'com.android.application'

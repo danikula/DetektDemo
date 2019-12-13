@@ -7,6 +7,8 @@ buildscript {
     }
 }
 
+apply plugin: io.gitlab.arturbosch.detekt.DetektPlugin
+
 detekt {
     input = files("src/main/java")
     config = files("detekt.yml")
