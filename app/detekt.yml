@@ -8,3 +8,9 @@ formatting:
   SpacingAroundColon:
     active: true
     autoCorrect: true
+
+style:
+  active: true
+  ForbiddenMethodCall:
+    active: true
+    methods: 'java.lang.System.gc'
